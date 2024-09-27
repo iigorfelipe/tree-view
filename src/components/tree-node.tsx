@@ -14,20 +14,27 @@ type TreeNodeProps = {
 const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
   const { theme } = useTheme();
   const isExpanded = useMemo(() => expandedNodes.has(node.id), [expandedNodes, node.id]);
+  const { componentSelected } = useTreeStore();
 
   const handleToggle = useCallback(() => {
     toggleNode(node.id);
   }, [node.id, toggleNode]);
 
-  const hoverColor = theme === 'dark' ? 'hover:bg-bg_dark' : 'hover:bg-bg_light';
-  const nodeIcon =
-    node.type === 'asset' ? '/asset.png' : node.type === 'location' ? '/location.png' : '/component.png';
+  const hoverColor = theme === 'dark' ? 'bg-bg_dark' : 'bg-bg_light';
+  const bgColor = componentSelected?.id === node.id ? hoverColor : 'transparent';
+  const nodeIcon = (
+    node.type === 'asset'
+      ? '/asset.png'
+      : node.type === 'location'
+        ? '/location.png'
+        : '/component.png'
+  );
 
   return (
     <li data-id={node.id}>
       <div
         onClick={handleToggle}
-        className={`flex items-center cursor-pointer p-1 ${hoverColor} rounded-md gap-2`}
+        className={`flex items-center cursor-pointer p-1 hover:${hoverColor} ${bgColor} rounded-md gap-2`}
         data-expanded={isExpanded}
       >
         {node.children && node.children.length > 0 && <SvgArrow direction={isExpanded ? 'down' : 'right'} />}
