@@ -20,6 +20,13 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
   }, [node.id, toggleNode]);
 
   const hoverColor = theme === 'dark' ? 'hover:bg-bg_dark' : 'hover:bg-bg_light';
+  const nodeIcon = (
+    node.type === 'asset'
+      ? '/asset.png'
+      : node.type === 'location'
+        ? '/location.png'
+        : '/component.png'
+  );
 
   return (
     <li data-id={node.id}>
@@ -30,21 +37,9 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
       >
         {node.children && node.children.length > 0 && <SvgArrow direction={isExpanded ? 'down' : 'right'} />}
 
-        <img
-          src={
-            node.type === 'asset'
-              ? '/asset.png'
-              : node.type === 'location'
-              ? '/location.png'
-              : '/component.png'
-          }
-          alt="icon"
-          className="size-5"
-        />
+        <img src={nodeIcon} alt="icon" className="size-5" />
 
-        <span className={`text-sm ${theme === 'light' ? 'text-section' : 'text-light'}`}>
-          {node.name}
-        </span>
+        <span className={`text-sm ${theme === 'light' ? 'text-section' : 'text-light'}`}>{node.name}</span>
 
         {node.type === 'component' && <StatusIcon componentSelected={node} />}
       </div>
