@@ -20,13 +20,8 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
   }, [node.id, toggleNode]);
 
   const hoverColor = theme === 'dark' ? 'hover:bg-bg_dark' : 'hover:bg-bg_light';
-  const nodeIcon = (
-    node.type === 'asset'
-      ? '/asset.png'
-      : node.type === 'location'
-        ? '/location.png'
-        : '/component.png'
-  );
+  const nodeIcon =
+    node.type === 'asset' ? '/asset.png' : node.type === 'location' ? '/location.png' : '/component.png';
 
   return (
     <li data-id={node.id}>
@@ -57,10 +52,10 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
 TreeNode.displayName = 'TreeNode';
 
 type TreeProps = {
-  treeNodesMap: Map<string, TreeNodeType>;
+  filteredTreeNodes: TreeNodeType[];
 };
 
-const Tree = ({ treeNodesMap }: TreeProps) => {
+const Tree = ({ filteredTreeNodes }: TreeProps) => {
   const { theme, isSmDown } = useTheme();
   const { componentSelected } = useTreeStore();
 
@@ -86,7 +81,7 @@ const Tree = ({ treeNodesMap }: TreeProps) => {
         isSmDown && componentSelected && 'hidden'
       } mobile:max-h-[100vh] laptop:max-h-[70vh] w-full max-w-[750px] list-none p-5 overflow-auto border ${borderColor} rounded-md`}
     >
-      {[...treeNodesMap.values()].map((node) => (
+      {filteredTreeNodes.map((node) => (
         <TreeNode key={node.id} node={node} expandedNodes={expandedNodes} toggleNode={toggleNode} />
       ))}
     </ul>

@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import { Asset, Company, Location, TreeNode } from '../types/api';
+import { SelectOptionKeys } from '../utils/selectOptions';
 
 export type TreeState = {
   companySelected: Company | undefined;
@@ -8,7 +9,7 @@ export type TreeState = {
   assets: Asset[];
   filters: {
     inputValue: string;
-    selectValue: 'energy' | 'alert' | 'operating' | 'vibration' | 'all';
+    selectValue: SelectOptionKeys;
   };
   textInputValue: string;
   componentSelected: TreeNode | undefined;
@@ -18,8 +19,8 @@ export type TreeState = {
   setLocations: (locations: Location[]) => void;
   setAssets: (assets: Asset[]) => void;
   setFilter: (filter: TreeState['filters']) => void;
-  selectInputValue: string;
-  setSelectInputValue: (selectValue: string) => void;
+  selectInputValue: SelectOptionKeys;
+  setSelectInputValue: (selectValue: SelectOptionKeys) => void;
 };
 
 export const initialFilters: TreeState['filters'] = {
