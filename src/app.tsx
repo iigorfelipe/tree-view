@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Companies } from './components/companies/mobile';
 import { ThemeProvider } from './contexts/theme/provider';
 import { Home } from './pages/home';
 import { Layout } from './pages/layout';
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/companies',
+        element: <Companies />,
       },
     ],
   },
