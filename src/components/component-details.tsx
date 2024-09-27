@@ -1,8 +1,9 @@
 import { useTheme } from '../contexts/theme';
 import { useTreeStore } from '../store';
 import { SvgArrow } from '../utils/arrow-up-down';
-import { IconButton } from './iconButton';
 import { StatusIcon } from '../utils/status-icon';
+import { IconButton } from './iconButton';
+import ImageUploader from './upload-image';
 
 type InfoDetailsProps = {
   label: string;
@@ -44,12 +45,7 @@ export const ComponentDetails = () => {
       <div className="flex p-6 w-full">
         <div className="w-full flex flex-col gap-8">
           <div className="flex flex-col sm:flex-row gap-5 w-full">
-            <div className="flex flex-col items-center justify-center border border-dashed border-primary mobile:w-full min-h-[226px] laptop:w-[936px] laptop:h-[290px] rounded-s bg-[#55a7ff34] cursor-pointer rounded-md">
-              <img src="/add-image.svg" alt="add image" />
-              <span className="flex items-center font-semibold text-base text-primary">
-                Adicionar imagem do Ativo {/* TODO: add imagem dinamicamente */}
-              </span>
-            </div>
+            <ImageUploader />
 
             <div className="flex sm:flex-col justify-center gap-6 w-full">
               <InfoDetails label="Tipo de Equipamento" value="Motor Elétrico (Trifásico)" />
