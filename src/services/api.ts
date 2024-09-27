@@ -1,16 +1,18 @@
+import { Asset, Company, Location } from "../types/api";
+
 const API_URL = 'https://fake-api.tractian.com';
 
-export const fetchCompanies = async () => {
+export const fetchCompanies = async (): Promise<Company[]> => {
   const response = await fetch(`${API_URL}/companies`);
   return response.json();
 };
 
-export const fetchLocations = async (companyId: string) => {
+export const fetchLocations = async (companyId: string): Promise<Location[]> => {
   const response = await fetch(`${API_URL}/companies/${companyId}/locations`);
   return response.json();
 };
 
-export const fetchAssets = async (companyId: string) => {
+export const fetchAssets = async (companyId: string): Promise<Asset[]> => {
   const response = await fetch(`${API_URL}/companies/${companyId}/assets`);
   return response.json();
 };
