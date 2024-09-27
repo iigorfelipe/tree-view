@@ -1,4 +1,5 @@
 import { FormEvent, useMemo } from 'react';
+import { ComponentDetails } from '../components/component-details';
 import { InputFiltersToDesktop } from '../components/input-filters/desktop';
 import { InputFiltersToMobile } from '../components/input-filters/mobile';
 import { Loading } from '../components/loading';
@@ -13,7 +14,8 @@ import { SelectOptionKeys } from '../utils/selectOptions';
 export const CompanyAssets = () => {
   const { isSmDown } = useTheme();
   const { isLoading } = useAssetTree();
-  const { locations, assets, filters, setFilter, selectInputValue, textInputValue } = useTreeStore();
+  const { locations, assets, filters, setFilter, selectInputValue, textInputValue, componentSelected } =
+    useTreeStore();
 
   const treeNodesMap = useCreateTreeNode(locations, assets);
 
@@ -91,7 +93,8 @@ export const CompanyAssets = () => {
           </span>
         ) : (
           <div className={`flex flex-col laptop:flex-row gap-3`}>
-            <Tree filteredTreeNodes={useFilterNodes} />
+            <Tree filteredTreeNodes={useFilterNodes} treeNodesMap={treeNodesMap} />
+            {componentSelected && <ComponentDetails />}
           </div>
         )}
       </div>

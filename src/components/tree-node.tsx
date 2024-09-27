@@ -1,8 +1,8 @@
-import { useMemo, useCallback, memo, useState } from 'react';
-import { TreeNode as TreeNodeType } from '../types/api';
-import { SvgArrow } from '../utils/arrow-up-down';
+import { memo, useCallback, useMemo, useState } from 'react';
 import { useTheme } from '../contexts/theme';
 import { useTreeStore } from '../store';
+import { TreeNode as TreeNodeType } from '../types/api';
+import { SvgArrow } from '../utils/arrow-up-down';
 import { StatusIcon } from '../utils/status-icon';
 
 type TreeNodeProps = {
@@ -53,13 +53,45 @@ TreeNode.displayName = 'TreeNode';
 
 type TreeProps = {
   filteredTreeNodes: TreeNodeType[];
+  treeNodesMap: Map<string, TreeNodeType>;
 };
 
-const Tree = ({ filteredTreeNodes }: TreeProps) => {
+const Tree = ({ filteredTreeNodes, treeNodesMap }: TreeProps) => {
   const { theme, isSmDown } = useTheme();
-  const { componentSelected } = useTreeStore();
+  const { componentSelected, setComponentSelected } = useTreeStore();
 
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
+
+  const findChildren = (treeNode: TreeNodeType, id: string) => {
+    const node = [treeNode];
+
+    while (node.length > 0) {
+      const currentNode = node.pop();
+
+      if (currentNode?.id === id) {
+        return currentNode;
+      }
+
+      if (currentNode?.children.length) {
+        node.push(...currentNode.children);
+      }
+    }
+
+    return undefined;
+  };
+
+  const getTreeNodeById = (id: string) => {
+    if (treeNodesMap.get(id)) {
+      return treeNodesMap.get(id);
+    }
+
+    for (const node of treeNodesMap.values()) {
+      const children = findChildren(node, id);
+      if (children) return children;
+    }
+
+    return undefined;
+  };
 
   const toggleNode = useCallback((id: string) => {
     setExpandedNodes((prev) => {
@@ -71,6 +103,11 @@ const Tree = ({ filteredTreeNodes }: TreeProps) => {
       }
       return newExpandedNodes;
     });
+
+    const component = getTreeNodeById(id);
+    if (component?.type === 'component') {
+      setComponentSelected(component);
+    }
   }, []);
 
   const borderColor = theme === 'light' ? 'border-border_light' : 'border-border_dark';
