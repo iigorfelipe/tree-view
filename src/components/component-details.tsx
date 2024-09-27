@@ -15,8 +15,15 @@ export const InfoDetails = ({ label, value, icon }: InfoDetailsProps) => {
   return (
     <div className="flex flex-col gap-2 w-full">
       <span className="text-md tablet:text-lg font-semibold">{label}</span>
-      <div className="flex gap-3">
-        {icon && <img src={icon} alt={`${label}-icon`} />}
+      <div className="flex gap-3 items-center">
+        {icon &&
+          (icon === 'responsible' ? (
+            <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-light text-sm">
+              {value[0].toUpperCase()}
+            </span>
+          ) : (
+            <img src={icon} alt={`${label}-icon`} />
+          ))}
         <span className="opacity-65 text-sm tablet:text-md">{value}</span>
       </div>
     </div>
@@ -50,7 +57,11 @@ export const ComponentDetails = () => {
             <div className="flex sm:flex-col justify-center gap-6 w-full">
               <InfoDetails label="Tipo de Equipamento" value="Motor Elétrico (Trifásico)" />
               <div className={`border-b ${borderColor}`} />
-              <InfoDetails label="Responsáveis" value="Mecânica" /> {/* TODO: add icon */}
+              <InfoDetails
+                label="Responsáveis"
+                value={componentSelected.sensorType === 'energy' ? 'Elétrica' : 'Mecânica'}
+                icon="responsible"
+              />
             </div>
           </div>
 
