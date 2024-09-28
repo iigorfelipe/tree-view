@@ -7,19 +7,20 @@ export const Companies = () => {
   const { companies, isLoadingCompanies, handleCompanySelection, refetchCompanies } = useAssetTree();
 
   if (!isSmDown) return;
+  const textColor = theme === 'dark' ? 'text-light' : 'text-dark';
 
   if (isLoadingCompanies) {
     return (
       <div className="flex items-center p-4 rounded-xl shadow-shape">
-        <span className={`text-[${theme}]`}>Buscando empresas...</span>
+        <span className={textColor}>Buscando empresas...</span>
       </div>
     );
   }
 
-  if (!isLoadingCompanies && !companies) {
+  if (!isLoadingCompanies && (!companies || companies.length === 0)) {
     return (
       <div className="flex flex-col gap-9 items-center p-8 rounded-xl shadow-shape">
-        <span className="text-text">Nenhuma empresa encontrada :(</span>
+        <span className={textColor}>Nenhuma empresa encontrada :(</span>
         <Button onClick={() => refetchCompanies()} variant="two">
           Tentar Novamente
           {/* TODO: add reload icon */}

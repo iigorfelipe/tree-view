@@ -13,8 +13,8 @@ export const CompaniesToDesktop = () => {
 
   if (!isLoadingCompanies && (!companies || companies.length === 0)) {
     return (
-      <div className="flex gap-4 items-center py-2 px-4 rounded-xl shadow-shape bg-gray-800">
-        <span className="text-white">Nenhuma empresa encontrada :(</span>
+      <div className="flex items-center py-2 gap-4 px-4 rounded-xl shadow-shape bg-gray-800">
+        <span className="hidden tablet:flex tablet:text-sm laptop:text-base text-white">Nenhuma empresa encontrada</span>
         <Button onClick={() => refetchCompanies()} variant="two">
           Tentar Novamente
           {/* TODO: add reload icon */}
