@@ -1,7 +1,9 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAssetTree } from '../../contexts/asset-tree';
+import { useTheme } from '../../contexts/theme';
 import { useTreeStore } from '../../store';
+import { isActiveFilters } from '../../utils/is-active-filter';
 import { SelectOptionKeys, selectOptions } from '../../utils/selectOptions';
 import { Button } from '../button';
 import { IconButton } from '../iconButton';
@@ -11,6 +13,7 @@ type InputFiltersToMobileProps = {
 };
 
 export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps) => {
+  const { theme } = useTheme();
   const [showInputFilters, setShowInputFilters] = useState(false);
   const navigate = useNavigate();
   const { clearFilters } = useAssetTree();
@@ -30,11 +33,6 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
 
   if (componentSelected) return null;
 
-  const showClearFilters =
-    filters.inputValue.trim().length > 0 ||
-    filters.selectValue !== 'all' ||
-    (filters.inputValue.trim().length > 0 && filters.selectValue === 'all');
-
   return (
     <div className="relative flex flex-col">
       <div
@@ -45,7 +43,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
         <IconButton icon="/search-box.svg" onClick={() => setShowInputFilters(true)} />
       </div>
 
-      {showClearFilters && (
+      {isActiveFilters(filters) && (
         <div
           className={`flex ${
             showInputFilters && 'flex-none'
@@ -56,7 +54,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
       )}
 
       <form
-        className={`fixed right-0 w-full h-full p-5 gap-5 flex flex-col bg-[#EAEAEA] ${
+        className={`fixed right-0 w-full h-full p-5 gap-5 flex flex-col bg-bg_${theme} ${
           showInputFilters ? 'opacity-1' : 'opacity-0'
         }`}
         style={{

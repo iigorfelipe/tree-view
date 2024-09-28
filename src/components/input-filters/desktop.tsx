@@ -1,6 +1,7 @@
 import { FormEvent } from 'react';
 import { useAssetTree } from '../../contexts/asset-tree';
 import { useTreeStore } from '../../store';
+import { isActiveFilters } from '../../utils/is-active-filter';
 import { SelectOptionKeys, selectOptions } from '../../utils/selectOptions';
 import { Button } from '../button';
 
@@ -12,11 +13,6 @@ export const InputFiltersToDesktop = ({ submitFilter }: InputFiltersToDesktopPro
   const { clearFilters } = useAssetTree();
   const { filters, textInputValue, setTextInputValue, selectInputValue, setSelectInputValue } =
     useTreeStore();
-
-  const showClearFilters =
-    filters.inputValue.trim().length > 0 ||
-    filters.selectValue !== 'all' ||
-    (filters.inputValue.trim().length > 0 && filters.selectValue === 'all');
 
   return (
     <form onSubmit={submitFilter} className="flex w-full max-w-[750px] gap-4 items-center justify-start">
@@ -45,7 +41,7 @@ export const InputFiltersToDesktop = ({ submitFilter }: InputFiltersToDesktopPro
         <span>Filtrar</span>
       </Button>
 
-      {showClearFilters && (
+      {isActiveFilters(filters) && (
         <Button variant="three" onClick={clearFilters}>
           <span>X</span>
         </Button>
