@@ -32,7 +32,7 @@ export const Header = () => {
           <IconButton onClick={handleLogoClick} icon="/logo.svg" />
         )}
       </>
-      {pathname === '/' ? <div /> : <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />}
+      {pathname === '/tree-view' ? <div /> : <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />}
     </div>
   );
 };
