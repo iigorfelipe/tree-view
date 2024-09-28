@@ -44,7 +44,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
     <div className="relative flex flex-col">
       <div
         className={`flex ${
-          showInputFilters && 'flex-none'
+          showInputFilters && 'hidden'
         } ml-auto items-center justify-center bg-secondary p-1 rounded-s-2xl fixed right-0 top-20 gap-1`}
       >
         <IconButton icon="/search-box.svg" onClick={() => setShowInputFilters(true)} />
