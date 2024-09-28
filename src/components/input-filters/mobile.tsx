@@ -33,6 +33,13 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
 
   if (componentSelected) return null;
 
+  const handleClearFilter = () => {
+    clearFilters();
+    setShowInputFilters(false);
+  };
+
+  const inputStyle = `w-full outline-none border border-bg_${theme} px-3 py-7 rounded-xl text-text text-center text-lg font-medium`;
+
   return (
     <div className="relative flex flex-col">
       <div
@@ -54,7 +61,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
       )}
 
       <form
-        className={`fixed right-0 w-full h-full p-5 gap-5 flex flex-col bg-bg_${theme} ${
+        className={`fixed right-0 w-full h-full p-5 gap-5 flex flex-col bg-${theme} ${
           showInputFilters ? 'opacity-1' : 'opacity-0'
         }`}
         style={{
@@ -66,12 +73,12 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
         <input
           type="text"
           placeholder="Buscar Ativo ou Local..."
-          className="w-full outline-none px-3 py-7 rounded-xl text-text text-center text-lg font-medium"
+          className={inputStyle}
           value={textInputValue}
           onChange={({ target: { value } }) => setTextInputValue(value)}
         />
         <select
-          className="w-full outline-none px-3 py-7 rounded-xl text-text appearance-none text-center text-lg font-medium"
+          className={`${inputStyle} appearance-none `}
           value={selectInputValue}
           onChange={({ target: { value } }) => setSelectInputValue(value as SelectOptionKeys)}
         >
@@ -82,16 +89,22 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
           ))}
         </select>
 
-        <Button
-          variant="three"
-          size="big"
-          type="submit"
-          className="rounded-md"
-          onClick={() => setShowInputFilters(false)}
-        >
-          <img src="/search-box.svg" alt="" className="size-7" />
-          <span className="text-xl font-medium">Filtrar</span>
-        </Button>
+        <div className="flex gap-5">
+          <Button
+            variant="three"
+            size="big"
+            type="submit"
+            className="rounded-md"
+            onClick={() => setShowInputFilters(false)}
+          >
+            <img src="/search-box.svg" alt="" className="size-7" />
+            <span className="text-xl font-medium">Filtrar</span>
+          </Button>
+
+          <Button variant="three" size="big" onClick={handleClearFilter} style={{ width: '35%' }}>
+            <span className="text-xl font-medium">X</span>
+          </Button>
+        </div>
       </form>
     </div>
   );

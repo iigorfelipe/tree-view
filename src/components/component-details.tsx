@@ -19,7 +19,7 @@ export const InfoDetails = ({ label, value, icon }: InfoDetailsProps) => {
         {icon &&
           (icon === 'responsible' ? (
             <span className="bg-primary rounded-full w-6 h-6 flex items-center justify-center text-light text-sm">
-              {value[0].toUpperCase()}
+              {value.charAt(0).toUpperCase()}
             </span>
           ) : (
             <img src={icon} alt={`${label}-icon`} />
