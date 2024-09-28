@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAssetTree } from '../../contexts/asset-tree';
 import { useTheme } from '../../contexts/theme';
 import { initialFilters, useTreeStore } from '../../store';
@@ -10,6 +10,7 @@ export const Header = () => {
   const { handleLogoClick } = useAssetTree();
   const { companySelected, setFilter, setCompanySelected } = useTreeStore();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   if (!isSmDown) return <HeaderToDesktop />;
 
@@ -31,8 +32,7 @@ export const Header = () => {
           <IconButton onClick={handleLogoClick} icon="/logo.svg" />
         )}
       </>
-
-      <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />
+      {pathname === '/' ? <div /> : <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />}
     </div>
   );
 };

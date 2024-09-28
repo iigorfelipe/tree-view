@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { useAssetTree } from '../../contexts/asset-tree';
 import { useTheme } from '../../contexts/theme';
 import { CompaniesToDesktop } from '../companies/desktop';
@@ -5,6 +6,7 @@ import { IconButton } from '../iconButton';
 
 export const HeaderToDesktop = () => {
   const { toggleTheme } = useTheme();
+  const { pathname } = useLocation();
 
   const { handleLogoClick } = useAssetTree();
 
@@ -15,7 +17,7 @@ export const HeaderToDesktop = () => {
         <span className="text-gray-500">|</span>
         <CompaniesToDesktop />
       </div>
-      <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />
+      {pathname !== '/' && <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />}
     </div>
   );
 };
