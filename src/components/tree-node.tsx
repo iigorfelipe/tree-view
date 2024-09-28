@@ -1,8 +1,9 @@
-import { memo, useCallback, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { useTheme } from '../contexts/theme';
 import { useTreeStore } from '../store';
 import { TreeNode as TreeNodeType } from '../types/api';
 import { SvgArrow } from '../utils/arrow-up-down';
+import { isActiveFilters } from '../utils/is-active-filter';
 import { StatusIcon } from '../utils/status-icon';
 
 type TreeNodeProps = {
@@ -61,13 +62,18 @@ TreeNode.displayName = 'TreeNode';
 type TreeProps = {
   filteredTreeNodes: TreeNodeType[];
   treeNodesMap: Map<string, TreeNodeType>;
+  autoExpandNodes: Set<string>;
 };
 
-const Tree = ({ filteredTreeNodes, treeNodesMap }: TreeProps) => {
+const Tree = ({ filteredTreeNodes, treeNodesMap, autoExpandNodes }: TreeProps) => {
   const { theme, isSmDown } = useTheme();
-  const { componentSelected, setComponentSelected } = useTreeStore();
+  const { componentSelected, setComponentSelected, filters } = useTreeStore();
 
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    setExpandedNodes(isActiveFilters(filters) ? autoExpandNodes : new Set());
+  }, [filters]);
 
   const findChildren = (treeNode: TreeNodeType, id: string) => {
     const node = [treeNode];

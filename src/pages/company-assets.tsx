@@ -18,6 +18,7 @@ export const CompanyAssets = () => {
     useTreeStore();
 
   const treeNodesMap = useCreateTreeNode(locations, assets);
+  const autoExpandNodes = new Set<string>();
 
   const useFilterNodes = useMemo(() => {
     const filteredTreeNodes = (treeNodes: TreeNode[]) => {
@@ -50,6 +51,7 @@ export const CompanyAssets = () => {
             ...node,
             children: childNode.length > 0 ? childNode : node.children,
           });
+          autoExpandNodes.add(node.id);
         }
       }
 
@@ -92,8 +94,12 @@ export const CompanyAssets = () => {
             Nenhum resultado encontrado.
           </span>
         ) : (
-          <div className={`flex flex-col laptop:flex-row gap-3`}>
-            <Tree filteredTreeNodes={useFilterNodes} treeNodesMap={treeNodesMap} />
+            <div className={`flex flex-col laptop:flex-row gap-3`}>
+            <Tree
+              filteredTreeNodes={useFilterNodes}
+              treeNodesMap={treeNodesMap}
+              autoExpandNodes={autoExpandNodes}
+            />
             {componentSelected && <ComponentDetails />}
           </div>
         )}
