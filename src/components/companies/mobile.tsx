@@ -33,7 +33,7 @@ export const Companies = () => {
     <div className="flex flex-col gap-9 w-11/12 items-center p-8 rounded-xl shadow-shape">
       {companies?.map((company) => (
         <Button key={company.id} size="big" variant="two" onClick={() => handleCompanySelection(company)}>
-          <img src="/company-icon.svg" alt="icon" className="size-6" />
+          <img src="./company-icon.svg" alt="icon" className="size-6" />
           <span className="text-xl font-medium">{company.name}</span>
         </Button>
       ))}

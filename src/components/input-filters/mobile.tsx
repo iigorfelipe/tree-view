@@ -97,7 +97,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
             className="rounded-md"
             onClick={() => setShowInputFilters(false)}
           >
-            <img src="/search-box.svg" alt="" className="size-7" />
+            <img src="./search-box.svg" alt="" className="size-7" />
             <span className="text-xl font-medium">Filtrar</span>
           </Button>
 
