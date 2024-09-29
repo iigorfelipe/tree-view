@@ -8,7 +8,7 @@ export const Home = () => {
   return (
     <div className="bg-home h-[90vh] w-full flex items-center justify-center px-8">
       <div className="relative ">
-        <img src="/home-msg.png" alt="home message" className="w-full h-auto" />
+        <img src="home-msg.png" alt="home message" className="w-full h-auto" />
         {isSmDown && (
           <button
             onClick={() => navigate('/companies')}
