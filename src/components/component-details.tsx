@@ -68,8 +68,8 @@ export const ComponentDetails = () => {
           <div className={`border-b ${borderColor} w-full`} />
 
           <div className="flex w-full">
-            <InfoDetails label="Sensor" value={componentSelected.sensorId!} icon="/sign.svg" />
-            <InfoDetails label="Receptor" value={componentSelected.gatewayId!} icon="/modem.svg" />
+            <InfoDetails label="Sensor" value={componentSelected.sensorId!} icon="sign.svg" />
+            <InfoDetails label="Receptor" value={componentSelected.gatewayId!} icon="modem.svg" />
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ export const Home = () => {
             onClick={() => navigate('/companies')}
             className="cursor-pointer bg-transparent border-none p-0 absolute -bottom-2/3 left-2/4 transform -translate-x-2/4"
           >
-            <img src="/next.svg" alt="arrow next" />
+            <img src="next.svg" alt="arrow next" />
           </button>
         )}
       </div>

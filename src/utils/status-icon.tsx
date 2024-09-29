@@ -11,10 +11,10 @@ export const StatusIcon = ({ componentSelected }: StatusIconProps) => {
     <img
       src={
         componentSelected.status === 'alert'
-          ? '/alert.svg'
+          ? 'alert.svg'
           : componentSelected.sensorType === 'energy'
-          ? '/energy.svg'
-          : '/operating.svg'
+          ? 'energy.svg'
+          : 'operating.svg'
       }
       alt={componentSelected.type}
     />
