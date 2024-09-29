@@ -25,10 +25,10 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
   const bgColor = componentSelected?.id === node.id ? hoverColor : 'transparent';
   const nodeIcon = (
     node.type === 'asset'
-      ? './asset.png'
+      ? '/asset.png'
       : node.type === 'location'
-        ? './location.png'
-        : './component.png'
+        ? '/location.png'
+        : '/component.png'
   );
 
   return (

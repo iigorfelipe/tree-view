@@ -37,7 +37,7 @@ export const InputFiltersToDesktop = ({ submitFilter }: InputFiltersToDesktopPro
       </select>
 
       <Button variant="three" type="submit">
-        <img src="search-box.svg" alt="filter icon" />
+        <img src="/search-box.svg" alt="filter icon" />
         <span>Filtrar</span>
       </Button>
 

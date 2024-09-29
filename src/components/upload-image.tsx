@@ -33,7 +33,7 @@ const ImageUploader = () => {
       className={`${img_size} flex-col items-center justify-center border border-dashed border-primary rounded-s bg-[#55a7ff34] cursor-pointer rounded-md`}
       onClick={handleClick}
     >
-      <img src="add-image.svg" alt="add image" />
+      <img src="/add-image.svg" alt="add image" />
       <span className="flex items-center font-semibold text-base text-primary">
         Adicionar imagem do Ativo
       </span>

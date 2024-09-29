@@ -29,10 +29,10 @@ export const Header = () => {
         {companySelected ? (
           <span className="font-normal text-lg text-white">{companySelected.name}</span>
         ) : (
-          <IconButton onClick={handleLogoClick} icon="logo.svg" />
+          <IconButton onClick={handleLogoClick} icon="/logo.svg" />
         )}
       </>
-      {pathname === '/tree-view/' ? <div /> : <IconButton onClick={toggleTheme} icon="theme-icon.svg" />}
+      {pathname === '/tree-view/' ? <div /> : <IconButton onClick={toggleTheme} icon="/theme-icon.svg" />}
     </div>
   );
 };
