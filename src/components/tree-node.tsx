@@ -23,13 +23,12 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
 
   const hoverColor = theme === 'dark' ? 'bg-bg_dark' : 'bg-bg_light';
   const bgColor = componentSelected?.id === node.id ? hoverColor : 'transparent';
-  const nodeIcon = (
+  const nodeIcon =
     node.type === 'asset'
-      ? 'asset.png'
+      ? '/tree-view/asset.png'
       : node.type === 'location'
-        ? 'location.png'
-        : 'component.png'
-  );
+      ? '/tree-view/location.png'
+      : '/tree-view/component.png';
 
   return (
     <li data-id={node.id}>

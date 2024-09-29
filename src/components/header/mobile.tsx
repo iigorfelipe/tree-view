@@ -23,16 +23,20 @@ export const Header = () => {
   return (
     <div className={`flex justify-between items-center w-full h-16 bg-section px-5`}>
       <div className="flex items-center">
-        {companySelected ? <IconButton onClick={handleBackClick} icon="arrow-back.svg" /> : ''}
+        {companySelected ? <IconButton onClick={handleBackClick} icon="/tree-view/arrow-back.svg" /> : ''}
       </div>
       <>
         {companySelected ? (
           <span className="font-normal text-lg text-white">{companySelected.name}</span>
         ) : (
-          <IconButton onClick={handleLogoClick} icon="logo.svg" />
+          <IconButton onClick={handleLogoClick} icon="/tree-view/logo.svg" />
         )}
       </>
-      {pathname === '/tree-view' ? <div /> : <IconButton onClick={toggleTheme} icon="theme-icon.svg" />}
+      {pathname === '/tree-view' ? (
+        <div />
+      ) : (
+        <IconButton onClick={toggleTheme} icon="/tree-view/theme-icon.svg" />
+      )}
     </div>
   );
 };
