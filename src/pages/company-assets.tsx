@@ -82,7 +82,7 @@ export const CompanyAssets = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="flex flex-col w-full h-[125vh] p-4 gap-4">
+    <div className="flex flex-col w-full p-4 gap-4">
       {isSmDown ? (
         <InputFiltersToMobile submitFilter={submitFilter} />
       ) : (
