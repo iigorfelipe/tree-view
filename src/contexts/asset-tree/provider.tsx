@@ -67,7 +67,7 @@ export const AssetTreeProvider = ({ children }: Props) => {
   const handleLogoClick = () => {
     setCompanySelected(undefined);
     clearFilters();
-    navigate('/tree-view');
+    navigate('/tree-view/');
   };
 
   const values = {

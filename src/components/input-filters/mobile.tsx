@@ -47,7 +47,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
           showInputFilters && 'hidden'
         } ml-auto items-center justify-center bg-secondary p-1 rounded-s-2xl fixed right-0 top-20 gap-1`}
       >
-        <IconButton icon="/search-box.svg" onClick={() => setShowInputFilters(true)} />
+        <IconButton icon="search-box.svg" onClick={() => setShowInputFilters(true)} />
       </div>
 
       {isActiveFilters(filters) && (
@@ -97,7 +97,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
             className="rounded-md"
             onClick={() => setShowInputFilters(false)}
           >
-            <img src="./search-box.svg" alt="" className="size-7" />
+            <img src="search-box.svg" alt="" className="size-7" />
             <span className="text-xl font-medium">Filtrar</span>
           </Button>
 

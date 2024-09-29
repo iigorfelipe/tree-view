@@ -2,22 +2,22 @@ export const contacts = [
   {
     link: 'mailto:iigorfelipe@gmail.com',
     label: 'email',
-    iconPath: './mail.svg',
+    iconPath: 'mail.svg',
   },
   {
     link: 'https://www.linkedin.com/in/iigor-felipe/',
     label: 'linkedin',
-    iconPath: './linkedin.svg',
+    iconPath: 'linkedin.svg',
   },
   {
     link: 'https://github.com/iigorfelipe',
     label: 'github',
-    iconPath: './github.svg',
+    iconPath: 'github.svg',
   },
   {
     link: 'https://wa.me/5598991595038',
     label: 'whatsapp',
-    iconPath: './phone.svg',
+    iconPath: 'phone.svg',
   },
 ];
 
@@ -42,7 +42,7 @@ export const Footer = () => {
       >
         Gituhub do projeto
         <>
-          <img src="./external-link.svg" alt="" />
+          <img src="external-link.svg" alt="" />
         </>
       </button>
     </div>

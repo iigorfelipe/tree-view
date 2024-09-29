@@ -11,8 +11,8 @@ export const Loading = () => {
   }, []);
 
   return (
-    <div className="text-center">      
-      <img className="size-11 animate-bounce" src="./cap-icon.svg" />
+    <div className="text-center">
+      <img className="size-11 animate-bounce" src="cap-icon.svg" />
       <p className="text-2xl font-bold text-primary">{dots}</p>
     </div>
   );
