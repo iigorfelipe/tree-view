@@ -39,7 +39,9 @@ export const ComponentDetails = () => {
   const borderColor = theme === 'light' ? 'border-border_light' : 'border-border_dark';
 
   return (
-    <div className={`flex flex-col border ${borderColor} rounded-md`}>
+    <div
+      className={`mobile:max-h-screen laptop:max-h-[70vh] flex flex-col border ${borderColor} rounded-md`}
+    >
       <header className={`flex h-12 px-5 border-b ${borderColor} items-center gap-3`}>
         {isSmDown && (
           <IconButton onClick={() => setComponentSelected(undefined)} icon={<SvgArrow direction="left" />} />

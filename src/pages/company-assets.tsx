@@ -82,7 +82,7 @@ export const CompanyAssets = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="flex flex-col w-full p-4 gap-4">
+    <div className="flex flex-col w-full p-4 gap-4 h-screen">
       {isSmDown ? (
         <InputFiltersToMobile submitFilter={submitFilter} />
       ) : (
@@ -94,7 +94,7 @@ export const CompanyAssets = () => {
             Nenhum resultado encontrado.
           </span>
         ) : (
-            <div className={`flex flex-col laptop:flex-row gap-3`}>
+          <div className={`flex flex-col laptop:flex-row gap-3`}>
             <Tree
               filteredTreeNodes={useFilterNodes}
               treeNodesMap={treeNodesMap}

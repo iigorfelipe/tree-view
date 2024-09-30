@@ -14,7 +14,7 @@ const ImageUploader = () => {
     fileInput?.click();
   };
 
-  const img_size = 'flex mobile:w-full min-h-[226px] laptop:w-[936px] laptop:h-[290px]';
+  const img_size = 'flex mobile:w-full min-w-[267px] min-h-[190px] laptop:w-[697px] desktop:w-[936px] desktop:h-[290px]';
 
   if (selectedImage) {
     return (

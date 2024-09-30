@@ -21,8 +21,9 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
     toggleNode(node.id);
   }, [node.id, toggleNode]);
 
-  const hoverColor = theme === 'dark' ? 'bg-bg_dark' : 'bg-bg_light';
-  const bgColor = componentSelected?.id === node.id ? hoverColor : 'transparent';
+  const hoverColor = theme === 'dark' ? 'hover:bg-bg_dark' : 'hover:bg-bg_light';
+  const bgColor = theme === 'dark' ? 'bg-bg_dark' : 'bg-bg_light';
+  const selectedColor = componentSelected?.id === node.id ? bgColor : 'transparent';
   const nodeIcon =
     node.type === 'asset'
       ? '/tree-view/asset.png'
@@ -34,7 +35,7 @@ const TreeNode = memo(({ node, expandedNodes, toggleNode }: TreeNodeProps) => {
     <li data-id={node.id}>
       <div
         onClick={handleToggle}
-        className={`flex items-center cursor-pointer p-1 hover:${hoverColor} ${bgColor} rounded-md gap-2`}
+        className={`flex items-center cursor-pointer p-1 ${hoverColor} ${selectedColor} rounded-md gap-2`}
         data-expanded={isExpanded}
       >
         {node.children && node.children.length > 0 && <SvgArrow direction={isExpanded ? 'down' : 'right'} />}
@@ -126,9 +127,10 @@ const Tree = ({ filteredTreeNodes, treeNodesMap, autoExpandNodes }: TreeProps) =
 
   return (
     <ul
-      className={`${
-        isSmDown && componentSelected && 'hidden'
-      } mobile:max-h-[100vh] laptop:max-h-[70vh] w-full max-w-[750px] list-none p-5 overflow-auto border ${borderColor} rounded-md`}
+      className={`${isSmDown && componentSelected && 'hidden'}
+      ${isSmDown && 'h-screen'}
+      tablet:max-h-[50vh]
+       laptop:max-h-[70vh] w-full max-w-[750px] list-none p-5 overflow-auto border ${borderColor} rounded-md`}
     >
       {filteredTreeNodes.map((node) => (
         <TreeNode key={node.id} node={node} expandedNodes={expandedNodes} toggleNode={toggleNode} />

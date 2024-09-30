@@ -22,17 +22,5 @@ export const ThemeProvider = ({ children }: Props) => {
     theme,
   };
 
-  const isDark = theme === 'dark';
-
-  return (
-    <ThemeContext.Provider value={providerValues}>
-      <div
-        className={`flex flex-col items-center justify-between min-h-[100vh] ${
-          isDark ? 'bg-dark' : 'bg-light'
-        } ${!isDark ? 'text-dark' : 'text-light'}`}
-      >
-        {children}
-      </div>
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={providerValues}>{children}</ThemeContext.Provider>;
 };

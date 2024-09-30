@@ -6,8 +6,11 @@ export const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-home h-[90vh] w-full flex items-center justify-center px-8">
-      <div className="relative ">
+    <div className="bg-home min-h-[120vh] w-full flex items-center justify-center px-8">
+      <div
+        className="relative -mt-[40vh]
+      "
+      >
         <img src="home-msg.png" alt="home message" className="w-full h-auto" />
         {isSmDown && (
           <button
