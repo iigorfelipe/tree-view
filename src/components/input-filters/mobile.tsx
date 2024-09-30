@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAssetTree } from '../../contexts/asset-tree';
 import { useTheme } from '../../contexts/theme';
@@ -26,6 +26,17 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
     setTextInputValue,
     setSelectInputValue,
   } = useTreeStore();
+
+  useEffect(() => {
+    if (showInputFilters) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showInputFilters]);
 
   if (!companySelected) {
     navigate('/companies');
@@ -61,7 +72,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
       )}
 
       <form
-        className={`fixed right-0 w-full h-full p-5 gap-5 flex flex-col bg-${theme} ${
+        className={`fixed right-0 w-full h-full p-5 gap-5 flex z-10 flex-col bg-${theme} ${
           showInputFilters ? 'opacity-1' : 'opacity-0'
         }`}
         style={{
