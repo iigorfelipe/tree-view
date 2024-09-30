@@ -17,7 +17,7 @@ export const HeaderToDesktop = () => {
         <span className="text-gray-500">|</span>
         <CompaniesToDesktop />
       </div>
-      {pathname !== '/tree-view' && <IconButton onClick={toggleTheme} icon="/tree-view/theme-icon.svg" />}
+      {pathname !== '/tree-view/' && <IconButton onClick={toggleTheme} icon="/tree-view/theme-icon.svg" />}
     </div>
   );
 };
