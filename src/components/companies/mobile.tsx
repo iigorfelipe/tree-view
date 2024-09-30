@@ -11,26 +11,26 @@ export const Companies = () => {
 
   if (isLoadingCompanies) {
     return (
-      <div className="flex items-center p-4 rounded-xl shadow-shape">
-        <span className={textColor}>Buscando empresas...</span>
+      <div className="flex justify-center items-center p-8 rounded-xl shadow-shape mt-28 mx-4">
+        <span className={`${textColor} text-xl`}>Buscando empresas...</span>
       </div>
     );
   }
 
   if (!isLoadingCompanies && (!companies || companies.length === 0)) {
     return (
-      <div className="flex flex-col gap-9 items-center p-8 rounded-xl shadow-shape">
-        <span className={textColor}>Nenhuma empresa encontrada :(</span>
-        <Button onClick={() => refetchCompanies()} variant="two">
-          Tentar Novamente
-          {/* TODO: add reload icon */}
+      <div className="flex flex-col gap-9 items-center p-8 rounded-xl shadow-shape mt-28 mx-4">
+        <span className={`${textColor} text-xl`}>Nenhuma empresa encontrada</span>
+        <Button onClick={() => refetchCompanies()} variant="two" size='big'>
+          <span className="text-xl">Tentar Novamente</span>
+          <img src="/tree-view/refresh.svg" alt="refresh icon" className="size-6" />
         </Button>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col gap-9 w-11/12 items-center p-8 rounded-xl shadow-shape">
+    <div className="flex flex-col gap-9 w-11/12 mx-auto mt-12 items-center p-8 rounded-xl shadow-shape">
       {companies?.map((company) => (
         <Button key={company.id} size="big" variant="two" onClick={() => handleCompanySelection(company)}>
           <img src="/tree-view/company-icon.svg" alt="icon" className="size-6" />

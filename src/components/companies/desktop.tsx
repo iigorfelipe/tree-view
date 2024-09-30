@@ -14,10 +14,12 @@ export const CompaniesToDesktop = () => {
   if (!isLoadingCompanies && (!companies || companies.length === 0)) {
     return (
       <div className="flex items-center py-2 gap-4 px-4 rounded-xl shadow-shape bg-gray-800">
-        <span className="hidden tablet:flex tablet:text-sm laptop:text-base text-white">Nenhuma empresa encontrada</span>
+        <span className="hidden tablet:flex tablet:text-sm laptop:text-base text-white">
+          Nenhuma empresa encontrada
+        </span>
         <Button onClick={() => refetchCompanies()} variant="two">
-          Tentar Novamente
-          {/* TODO: add reload icon */}
+          <span className='text-base mobile:text-sm'>Tentar Novamente</span>
+          <img src="/tree-view/refresh.svg" alt="refresh icon" className="size-5" />
         </Button>
       </div>
     );
