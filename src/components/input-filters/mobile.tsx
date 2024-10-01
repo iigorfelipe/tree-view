@@ -39,7 +39,7 @@ export const InputFiltersToMobile = ({ submitFilter }: InputFiltersToMobileProps
   }, [showInputFilters]);
 
   if (!companySelected) {
-    navigate('/companies');
+    navigate('/tree-view/companies');
   }
 
   if (componentSelected) return null;

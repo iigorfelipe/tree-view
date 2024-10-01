@@ -14,7 +14,7 @@ export const Home = () => {
         <img src="home-msg.png" alt="home message" className="w-full h-auto" />
         {isSmDown && (
           <button
-            onClick={() => navigate('/companies')}
+            onClick={() => navigate('/tree-view/companies')}
             className="cursor-pointer bg-transparent border-none p-0 absolute -bottom-2/3 left-2/4 transform -translate-x-2/4"
           >
             <img src="next.svg" alt="arrow next" />

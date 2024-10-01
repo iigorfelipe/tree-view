@@ -15,11 +15,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/companies',
+        path: '/tree-view/companies',
         element: <Companies />,
       },
       {
-        path: '/company-assets',
+        path: '/tree-view/company-assets',
         element: <CompanyAssets />,
       },
     ],

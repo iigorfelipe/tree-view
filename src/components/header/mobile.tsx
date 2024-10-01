@@ -15,7 +15,7 @@ export const Header = () => {
   if (!isSmDown) return <HeaderToDesktop />;
 
   const handleBackClick = () => {
-    navigate('/companies');
+    navigate('/tree-view/companies');
     setFilter(initialFilters);
     setCompanySelected(undefined);
   };

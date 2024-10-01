@@ -60,7 +60,7 @@ export const AssetTreeProvider = ({ children }: Props) => {
     if (!selectedCompany) return;
 
     setCompanySelected(selectedCompany);
-    navigate('/company-assets/');
+    navigate('/tree-view/company-assets/');
     clearFilters();
   };
 
