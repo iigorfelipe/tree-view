@@ -5,6 +5,7 @@ import { TreeNode as TreeNodeType } from '../types/api';
 import { SvgArrow } from '../utils/arrow-up-down';
 import { isActiveFilters } from '../utils/is-active-filter';
 import { StatusIcon } from '../utils/status-icon';
+import { IconButton } from './iconButton';
 
 type TreeNodeProps = {
   node: TreeNodeType;
@@ -126,16 +127,26 @@ const Tree = ({ filteredTreeNodes, treeNodesMap, autoExpandNodes }: TreeProps) =
   const borderColor = theme === 'light' ? 'border-border_light' : 'border-border_dark';
 
   return (
-    <ul
-      className={`${isSmDown && componentSelected && 'hidden'}
+    <div
+      className={`
+      ${isSmDown && componentSelected && 'hidden'}
       ${isSmDown && 'h-screen'}
-      tablet:max-h-[50vh]
-       laptop:max-h-[70vh] w-full max-w-[750px] list-none p-5 overflow-auto border ${borderColor} rounded-md`}
+        tablet:max-h-[50vh]
+        laptop:max-h-[70vh] w-full max-w-[750px] list-none overflow-auto
+        border ${borderColor} rounded-md
+       `}
     >
-      {filteredTreeNodes.map((node) => (
-        <TreeNode key={node.id} node={node} expandedNodes={expandedNodes} toggleNode={toggleNode} />
-      ))}
-    </ul>
+      <div className="h-7 p-3 flex justify-end">
+        {expandedNodes.size > 0 && (
+          <IconButton onClick={() => setExpandedNodes(new Set())} icon="/tree-view/arrows-collapse.svg" />
+        )}
+      </div>
+      <ul className="px-5 pb-5">
+        {filteredTreeNodes.map((node) => (
+          <TreeNode key={node.id} node={node} expandedNodes={expandedNodes} toggleNode={toggleNode} />
+        ))}
+      </ul>
+    </div>
   );
 };
 
