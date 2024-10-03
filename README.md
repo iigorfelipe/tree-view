@@ -8,20 +8,20 @@
 
 **TRACTIAN Challenge - Engenheiro de Software Front End**
 
-## Imagens:
+## 🖼️ Imagens:
 
 <img src="https://github.com/user-attachments/assets/eb31140e-db4c-42c6-9fc4-eb7f842b7225" alt="Mobile Home Screen" height="450px" />
 <img src="https://github.com/user-attachments/assets/1cc2efae-5afc-45e8-826d-d2043228a178" alt="Mobile Tree Screen" height="450px" />
 <img src="https://github.com/user-attachments/assets/a5800f9d-0892-4df8-b94b-1c48994dbad3" alt="Mobile Detail Screen" height="450px" />
 
-## Gifs:
+## 🎞️ Gifs:
 
 <img src="https://github.com/user-attachments/assets/7851efd4-30f8-45d9-9881-124d639ab7a1" alt="Mobile Loading" height="450px" />
 <img src="https://github.com/user-attachments/assets/b1c21677-88a8-43b8-b24b-f5da4aca3d5f" alt="Mobile Filter" height="450px" />
 
-## Vídeo:
+## 🎥 Vídeo:
 
-<video src="https://github.com/user-attachments/assets/27dac015-b5be-48ca-a4ed-dcfd7cec25e5" autoplay loop muted></video>
+<video src="https://github.com/user-attachments/assets/42a419c0-27cc-43d0-b138-1475268a7b61" autoplay loop muted></video>
 
 ## 📌 Desafio:
 
@@ -31,7 +31,7 @@
 
 A aplicação permite de forma `performática` a visualização hierárquica dos ativos de uma empresa, incluindo componentes, ativos e localizações. A árvore suporta funcionalidades de filtragem e exibição responsiva para web, tablets e dispositivos móveis.
 
-## ⚙️ Filtros:
+## 🔍 Filtros:
 
 - **Pesquisa por Texto:** Permite aos usuários buscar componentes, ativos e localizações específicas.
 - **Sensores de Energia:** Filtro para isolar sensores de energia na árvore.
@@ -81,7 +81,7 @@ npm run dev
 
 ⚠️ Certifique-se de ter o Node.js na versão `14 ou superior` instalado. Se encontrar qualquer dificuldade, sinta-se à vontade para me contatar através dos links fornecidos ao final desta documentação.
 
-## API:
+## 🌐 API:
 
 A aplicação utiliza uma API fake para obter os dados das empresas, localizações e ativos. A API e seus endpoints são:
 
@@ -91,11 +91,11 @@ A aplicação utiliza uma API fake para obter os dados das empresas, localizaç�
 - **`/companies/:companyId/locations`:** Retorna todas as localizações de uma empresa
 - **`/companies/:companyId/assets`:** Retorna todos os ativos de uma empresa
 
-## Temas:
+## 🎨 Temas:
 
 Suporte a tema `claro` e `escuro`.
 
-## Responsividade:
+## 📱Responsividade:
 
 Interface adaptável para uso em **dispositivos móveis**, **tablets**, **laptops** e **desktop**;
 
@@ -118,11 +118,11 @@ Se houvesse mais tempo, as seguintes melhorias poderiam ser implementadas:
 
 - **Mobile com React Native:** Desenvolvimento mobile utilizando React Native.
 
-### Nota:
+### 📝 Nota:
 
 Este projeto é a segunda versão do [tractian-challenge](https://github.com/iigorfelipe/tractian-challenge), onde aprimorei o layout, adicionei mais opções de filtragem e foquei em melhorias de performance. Todas essas melhorias foram mencionadas na seção **"Melhorias Futuras"** da documentação da primeira versão.
 
-## Autor
+## 👨‍💻 Autor
 
 **@Igor Felipe**
 
