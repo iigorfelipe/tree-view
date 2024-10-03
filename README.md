@@ -1,20 +1,34 @@
 <div align="center">
 
 [Desafio](#📌-desafio) | [Sobre](#📄-sobre-o-projeto) | [Tecnologias](#🛠️-tecnologias-utilizadas) | [Instalação](#🚀-executando-o-projeto-localmente) | [API](#api) | [Autor](#autor)
+
 </div>
 
-
 # Tree View
+
 **TRACTIAN Challenge - Engenheiro de Software Front End**
 
+## Imagens:
+
+<img src="https://github.com/user-attachments/assets/eb31140e-db4c-42c6-9fc4-eb7f842b7225" alt="Mobile Home Screen" height="450px" />
+<img src="https://github.com/user-attachments/assets/1cc2efae-5afc-45e8-826d-d2043228a178" alt="Mobile Tree Screen" height="450px" />
+<img src="https://github.com/user-attachments/assets/a5800f9d-0892-4df8-b94b-1c48994dbad3" alt="Mobile Detail Screen" height="450px" />
+
+## Vídeos:
+
+<video src="https://github.com/user-attachments/assets/7aad2ce1-343b-47d1-8df6-10c25ad6d8b9" autoplay loop muted height="450px"></video>
+<video src="https://github.com/user-attachments/assets/649dc6fa-8d0a-4305-a634-93b1c4423256" autoplay loop muted height="450px"></video>
 
 ## 📌 Desafio:
+
 **Criar uma aplicação de visualização de árvore performática que mostre os ativos das empresas.**
 
 ## 📄 Sobre o Projeto:
-A aplicação permite de forma ``performática`` a visualização hierárquica dos ativos de uma empresa, incluindo componentes, ativos e localizações. A árvore suporta funcionalidades de filtragem e exibição responsiva para web, tablets e dispositivos móveis.
+
+A aplicação permite de forma `performática` a visualização hierárquica dos ativos de uma empresa, incluindo componentes, ativos e localizações. A árvore suporta funcionalidades de filtragem e exibição responsiva para web, tablets e dispositivos móveis.
 
 ## ⚙️ Filtros:
+
 - **Pesquisa por Texto:** Permite aos usuários buscar componentes, ativos e localizações específicas.
 - **Sensores de Energia:** Filtro para isolar sensores de energia na árvore.
 - **Sensores de Vibração:** Filtro para isolar sensores de vibração na árvore.
@@ -22,43 +36,49 @@ A aplicação permite de forma ``performática`` a visualização hierárquica d
 - **Status Operando:** Filtro para identificar ativos com status operando.
 
 ## 🛠️ Tecnologias Utilizadas:
+
 - **[Typescript](https://github.com/topics/typescript)**
 - **[React](https://github.com/topics/react)**
 - **[Vite](https://github.com/topics/vite)**
 - **[Tailwind CSS](https://github.com/topics/tailwindcss)**
 
-## Principais Bibliotecas Utilizadas:
-  - **Zustand**: Gerenciamento de estado leve e altamente performático.
-  - **React Router Dom**: Facilita o roteamento dinâmico entre páfinas no React.
-  - **Tailwind Variants**: Permite a criação eficiente de componentes com utilitários de estilo do Tailwind.
-  - **React Query**: Gerencia o estado de dados assícronos e otimiza o controle de chamadas à API.
+## 🔗 Principais Bibliotecas Utilizadas:
 
+- **Zustand**: Gerenciamento de estado leve e altamente performático.
+- **React Router Dom**: Facilita o roteamento dinâmico entre páfinas no React.
+- **Tailwind Variants**: Permite a criação eficiente de componentes com utilitários de estilo do Tailwind.
+- **React Query**: Gerencia o estado de dados assícronos e otimiza o controle de chamadas à API.
 
 ## 🚀 Executando o Projeto Localmente:
 
 1. Clone o repositório:
+
 ```bash
 git clone git@github.com:iigorfelipe/tree-view.git
 ```
 
 2. Entre na pasta do projeto:
+
 ```bash
 cd tree-view
 ```
 
 3. Instale as dependências:
+
 ```bash
 npm install
 ```
 
 4. Execute o projeto:
+
 ```bash
 npm run dev
 ```
 
-⚠️ Certifique-se de ter o Node.js na versão ``14 ou superior`` instalado. Se encontrar qualquer dificuldade, sinta-se à vontade para me contatar através dos links fornecidos ao final desta documentação.
+⚠️ Certifique-se de ter o Node.js na versão `14 ou superior` instalado. Se encontrar qualquer dificuldade, sinta-se à vontade para me contatar através dos links fornecidos ao final desta documentação.
 
 ## API:
+
 A aplicação utiliza uma API fake para obter os dados das empresas, localizações e ativos. A API e seus endpoints são:
 
 - **`fake-api.tractian.com`:** api base
@@ -67,17 +87,20 @@ A aplicação utiliza uma API fake para obter os dados das empresas, localizaç�
 - **`/companies/:companyId/locations`:** Retorna todas as localizações de uma empresa
 - **`/companies/:companyId/assets`:** Retorna todos os ativos de uma empresa
 
-
 ## Temas:
-Suporte a tema ``claro`` e ``escuro``.
+
+Suporte a tema `claro` e `escuro`.
 
 ## Responsividade:
+
 Interface adaptável para uso em **dispositivos móveis**, **tablets**, **laptops** e **desktop**;
 
-## 🔗 Melhorias Futuras:
+## 🔧 Melhorias Futuras:
+
 Se houvesse mais tempo, as seguintes melhorias poderiam ser implementadas:
 
-- Funcionalidades Adicionais: 
+- **Funcionalidades Adicionais:**
+
   - Mais filtragens.
   - Botão para agrupar a árvore.
   - Adição de ativos.
@@ -86,9 +109,13 @@ Se houvesse mais tempo, as seguintes melhorias poderiam ser implementadas:
   - Menu lateral.
   - Notificações.
 
-- UI/UX: Refinamentos na interface de usuário para melhorar a experiência do usuário e a usabilidade.
+- **UI/UX:** Refinamentos na interface de usuário para melhorar a experiência do usuário e a usabilidade.
+- **Testes Unitários:** Implementação de testes unitários.
+
+- **Mobile com React Native:** Desenvolvimento mobile utilizando React Native.
 
 ### Nota:
+
 Este projeto é a segunda versão do [tractian-challenge](https://github.com/iigorfelipe/tractian-challenge), onde aprimorei o layout, adicionei mais opções de filtragem e foquei em melhorias de performance. Todas essas melhorias foram mencionadas na seção **"Melhorias Futuras"** da documentação da primeira versão.
 
 ## Autor
