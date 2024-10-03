@@ -6,7 +6,9 @@
 
 # Tree View
 
-**TRACTIAN Challenge - Engenheiro de Software Front End**
+## 🚀 Link da Aplicação:
+
+Acesse a aplicação rodando [aqui](https://iigorfelipe.github.io/tree-view/).
 
 ## 🖼️ Imagens:
 
@@ -53,7 +55,7 @@ A aplicação permite de forma `performática` a visualização hierárquica dos
 - **Tailwind Variants**: Permite a criação eficiente de componentes com utilitários de estilo do Tailwind.
 - **React Query**: Gerencia o estado de dados assícronos e otimiza o controle de chamadas à API.
 
-## 🚀 Executando o Projeto Localmente:
+## 📋 Executando o Projeto Localmente:
 
 1. Clone o repositório:
 
