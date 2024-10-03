@@ -14,10 +14,14 @@
 <img src="https://github.com/user-attachments/assets/1cc2efae-5afc-45e8-826d-d2043228a178" alt="Mobile Tree Screen" height="450px" />
 <img src="https://github.com/user-attachments/assets/a5800f9d-0892-4df8-b94b-1c48994dbad3" alt="Mobile Detail Screen" height="450px" />
 
-## Vídeos:
+## Gifs:
 
-<video src="https://github.com/user-attachments/assets/7aad2ce1-343b-47d1-8df6-10c25ad6d8b9" autoplay loop muted height="450px"></video>
-<video src="https://github.com/user-attachments/assets/649dc6fa-8d0a-4305-a634-93b1c4423256" autoplay loop muted height="450px"></video>
+<img src="https://github.com/user-attachments/assets/7851efd4-30f8-45d9-9881-124d639ab7a1" alt="Mobile Loading" height="450px" />
+<img src="https://github.com/user-attachments/assets/b1c21677-88a8-43b8-b24b-f5da4aca3d5f" alt="Mobile Filter" height="450px" />
+
+## Vídeo:
+
+<video src="https://github.com/user-attachments/assets/27dac015-b5be-48ca-a4ed-dcfd7cec25e5" autoplay loop muted></video>
 
 ## 📌 Desafio:
 
