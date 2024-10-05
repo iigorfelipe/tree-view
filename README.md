@@ -1,6 +1,6 @@
 <div align="center">
 
-[Desafio](#-desafio) | [Sobre](#-sobre-o-projeto) | [Tecnologias](#-tecnologias-utilizadas) | [Instalação](#-executando-o-projeto-localmente) | [API](#-api) | [Autor](#-autor)
+[Desafio](#-desafio) | [Sobre](#-sobre-o-projeto) | [Tecnologias](#tecnologias-utilizadas) | [Instalação](#-executando-o-projeto-localmente) | [API](#-api) | [Autor](#-autor)
 
 </div>
 
@@ -41,6 +41,7 @@ A aplicação permite de forma `performática` a visualização hierárquica dos
 - **Status Crítico:** Filtro para identificar ativos com status crítico.
 - **Status Operando:** Filtro para identificar ativos com status operando.
 
+<a name="tecnologias-utilizadas"></a>
 ## 🛠️ Tecnologias Utilizadas:
 
 - **[Typescript](https://github.com/topics/typescript)**
