@@ -1,6 +1,6 @@
 <div align="center">
 
-[Desafio](#📌-desafio) | [Sobre](#📄-sobre-o-projeto) | [Tecnologias](#🛠️-tecnologias-utilizadas) | [Instalação](#🚀-executando-o-projeto-localmente) | [API](#api) | [Autor](#autor)
+[Desafio](#-desafio) | [Sobre](#-sobre-o-projeto) | [Tecnologias](#-tecnologias-utilizadas) | [Instalação](#-executando-o-projeto-localmente) | [API](#-api) | [Autor](#-autor)
 
 </div>
 
